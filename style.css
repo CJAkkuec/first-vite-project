@@ -15,7 +15,9 @@
   margin-right: 0.5rem;
 }
 
-.mainimg {
+.avatar {
+  height: 10rem;
+  width: auto;
   border-radius: 90%;
   border: 5px solid #2c3e50;
 }

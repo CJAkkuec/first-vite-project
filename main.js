@@ -1,4 +1,5 @@
 import "./style.css";
+import "animate.css";
 
 import Chance from "chance";
 const chance = new Chance();
@@ -18,7 +19,7 @@ window.addEventListener("load", (event) => {
 
   document.querySelector("#app").innerHTML = `
 <main>
-<img class="mainimg" src=${avatarGenerator}  alt="Selfhtml">
+<img class="avatar animate__animated animate__rubberBand" src="" id="mainIMG">
 <h1>${firstNameGenerator} ${middleNameGenerator} ${lastNameGenerator}</h1>
 <div>
   <p><img class="icon" src="images/phone-solid.svg">${emailGenerator}</p>
@@ -34,4 +35,19 @@ window.addEventListener("load", (event) => {
 </div>
 </main>
 `;
+
+  let randomImage = new Array(
+    "./images/1.jpg",
+    "./images/2.jpg",
+    "./images/3.jpg",
+    "./images/4.jpg",
+    "./images/5.jpg",
+    "./images/6.jpg",
+    "./images/7.jpg",
+    "./images/8.jpg"
+  );
+
+  let randomNum = Math.floor(Math.random() * randomImage.length);
+
+  document.getElementById("mainIMG").src = randomImage[randomNum];
 });
