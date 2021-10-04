@@ -1,10 +1,18 @@
-import "./style.css";
-import "animate.css";
+import './style.css';
+import 'animate.css';
+import img1 from '/images/1.jpg';
+import img2 from '/images/2.jpg';
+import img3 from '/images/3.jpg';
+import img4 from '/images/4.jpg';
+import img5 from '/images/5.jpg';
+import img6 from '/images/6.jpg';
+import img7 from '/images/7.jpg';
+import img8 from '/images/8.jpg';
 
-import Chance from "chance";
+import Chance from 'chance';
 const chance = new Chance();
 
-window.addEventListener("load", (event) => {
+window.addEventListener('load', (event) => {
   let firstNameGenerator = chance.first();
   let middleNameGenerator = chance.first();
   let lastNameGenerator = chance.last();
@@ -16,7 +24,7 @@ window.addEventListener("load", (event) => {
   let cityGenerator = chance.city();
   let animalGenerator = chance.animal();
 
-  document.querySelector("#app").innerHTML = `
+  document.querySelector('#app').innerHTML = `
 <main>
 <img class="avatar animate__animated animate__rubberBand" src="" id="mainIMG">
 <h1>${firstNameGenerator} ${middleNameGenerator} ${lastNameGenerator}</h1>
@@ -35,18 +43,9 @@ window.addEventListener("load", (event) => {
 </main>
 `;
 
-  let randomImage = new Array(
-    "/images/1.jpg",
-    "/images/2.jpg",
-    "/images/3.jpg",
-    "/images/4.jpg",
-    "/images/5.jpg",
-    "/images/6.jpg",
-    "/images/7.jpg",
-    "/images/8.jpg"
-  );
+  let randomImage = [img1, img2, img3, img4, img5, img6, img7, img8];
 
   let randomNum = Math.floor(Math.random() * randomImage.length);
 
-  document.getElementById("mainIMG").src = randomImage[randomNum];
+  document.getElementById('mainIMG').src = randomImage[randomNum];
 });
